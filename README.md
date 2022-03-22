@@ -18,6 +18,12 @@ Don't get me wrong: Dracula is an awesome theme, but some of the decisions that 
 
 All instructions can be found at [INSTALL](./INSTALL), but you could just open the **Extensions** tab on VS Code and search for "Dracula Refined" (without quotes).
 
+## Community
+
+* [Twitter](https://twitter.com/draculatheme) - Best for getting updates about themes and new stuff.
+* [GitHub](https://github.com/dracula/dracula-theme/discussions) - Best for asking questions and discussing issues.
+* [Discord](https://draculatheme.com/discord-invite) - Best for hanging out with the community.
+
 ## Contributing
 
 If you'd like to contribute to this fork, please read the [contributing guidelines](./.github/CONTRIBUTING.md).

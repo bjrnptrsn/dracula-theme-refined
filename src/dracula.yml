@@ -74,6 +74,10 @@ colors:
   terminal.ansiCyan: *COLOR6
   terminal.ansiWhite: *COLOR7
 
+  # Contrast Colors
+  contrastBorder:                                                               # An extra border around elements to separate them from others for greater contrast
+  contrastActiveBorder:                                                         # An extra border around active elements to separate them from others for greater contrast
+
   # Base Colors
   focusBorder: *COMMENT                                                         # Overall border color for focused elements. This color is only used if not overridden by a component
   foreground: *FG                                                               # Overall foreground color. This color is only used if not overridden by a component
@@ -84,7 +88,12 @@ colors:
   # Button Control
   button.background: *SELECTION                                                 # Button background color
   button.foreground: *FG                                                        # Button foreground color
+  button.border:                                                                # Button border color
   button.hoverBackground:                                                       # Button background color when hovering
+  button.secondaryBackground: *BG                                               # Secondary button background color.
+  button.secondaryForeground: *FG                                               # Secondary button foreground color.
+  button.secondaryHoverBackground: *BGLight                                     # Secondary button background color when hovering.
+
 
   # Dropdown Control
   dropdown.background: *BGLight                                                 # Dropdown background
@@ -180,7 +189,7 @@ colors:
   editor.selectionBackground: *SELECTION                                        # Color of the editor selection
   editor.selectionHighlightBackground: *BGLighter                               # Color for regions with the same content as the selection
   editor.inactiveSelectionBackground:                                           # Color of the selection in an inactive editor
-  editor.foldBackground: *BGDark                                                # Background color for folded ranges
+  editor.foldBackground: !alpha [ *BGDark, 80 ]                                 # Background color for folded ranges
 
   editor.wordHighlightBackground: !alpha [ *CYAN, 50 ]                          # Background color of a symbol during read-access, for example when reading a variable
   editor.wordHighlightStrongBackground: !alpha [ *GREEN, 50 ]                   # Background color of a symbol during write-access, for example when writing to a variable
@@ -214,6 +223,14 @@ colors:
   # for workbench.colorCustomizations in User Settings
   editorBracketMatch.background:                                                # Background color behind matching brackets
   editorBracketMatch.border:                                                    # Color for matching brackets boxes
+
+  editorBracketHighlight.foreground1: *FG                                       # Color of first pair of brackets
+  editorBracketHighlight.foreground2: *PINK                                     # Color of second pair of brackets
+  editorBracketHighlight.foreground3: *CYAN                                     # Color of third pair of brackets
+  editorBracketHighlight.foreground4: *GREEN                                    # Color of fourth pair of brackets
+  editorBracketHighlight.foreground5: *PURPLE                                   # Color of fifth pair of brackets
+  editorBracketHighlight.foreground6: *ORANGE                                   # Color of sixth pair of brackets
+  editorBracketHighlight.unexpectedBracket.foreground: *RED                     # Color of bracket matching error
 
   editorOverviewRuler.border: *BGDarker                                         # Color of the overview ruler border
   editorOverviewRuler.findMatchForeground:
@@ -313,7 +330,7 @@ colors:
   statusBarItem.hoverBackground:                                                # Status Bar item background color when hovering
   statusBarItem.prominentBackground: *RED                                       # Status Bar prominent items background color. Prominent items stand out from other Status Bar entries to indicate importance
   statusBarItem.prominentHoverBackground: *ORANGE                               # Status Bar prominent items background color when hovering. Prominent items stand out from other Status Bar entries to indicate importance
-  statusBarItem.remoteForeground: *FG                                           # Background color for the remote indicator on the status bar
+  statusBarItem.remoteForeground: *BG                                           # Background color for the remote indicator on the status bar
   statusBarItem.remoteBackground: *PURPLE                                       # Foreground color for the remote indicator on the status bar
   statusBar.border:
 
@@ -322,19 +339,6 @@ colors:
   titleBar.activeForeground: *FG                                                # Title Bar foreground when the window is active
   titleBar.inactiveBackground: *BGDarker                                        # Title Bar background when the window is inactive
   titleBar.inactiveForeground: *COMMENT                                         # Title Bar foreground when the window is inactive
-
-  # Notification Dialog Colors
-  notification.background: *BG                                                  # Notifications background color
-  notification.foreground: *FG                                                  # Notifications foreground color
-  notification.buttonBackground: *SELECTION
-  notification.buttonForeground: *FG
-  notification.buttonHoverBackground: *LineHighlight
-  notification.errorBackground: *RED
-  notification.errorForeground: *FG
-  notification.infoBackground: *CYAN
-  notification.infoForeground: *BG
-  notification.warningBackground: *ORANGE
-  notification.warningForeground: *BG
 
   # Extensions
   extensionButton.prominentForeground: *FG                                      # Extension view button foreground color (for example Install button)
@@ -355,7 +359,6 @@ colors:
 
   # Setting Editor
   settings.headerForeground:           *FG                                      # The foreground color for a section header or active title
-  settings.modifiedItemForeground:     *ORANGE                                  # The foreground color for a the modified setting indicator
   settings.modifiedItemIndicator:      *ORANGE                                  # The color of the line that indicates a modified setting
   settings.inactiveSelectedItemBorder:                                          # The color of the selected setting row border, when the settings list does not have focus
   settings.dropdownBackground:         *BGDark                                  # Dropdown background
@@ -380,9 +383,8 @@ colors:
 
   # Misc
   menu.separatorBackground:                                                     # Color of a separator menu item in menus
-
-  listFilterWidget.background: *BGLight                                              # Background color of the type filter widget in lists and trees.
-  listFilterWidget.outline: *BGLighter                                           # Outline color of the type filter widget in lists and trees.
+  listFilterWidget.background: *BGLight                                         # Background color of the type filter widget in lists and trees.
+  listFilterWidget.outline: *BGLighter                                          # Outline color of the type filter widget in lists and trees.
   listFilterWidget.noMatchesOutline: *RED                                       # Outline color of the type filter widget in lists and trees, when there are no matches.
 
 # Syntaxes
@@ -404,10 +406,6 @@ tokenColors:
     - header
     settings:
       foreground: *PURPLE
-  - scope:
-    - source
-    settings:
-      foreground: *FG
 
   # Diffs
   # ======
@@ -678,7 +676,6 @@ tokenColors:
   - name: Function names
     scope:
     - entity.name.function
-    - meta.function-call.generic
     - meta.function-call.object
     - meta.function-call.php
     - meta.function-call.static
@@ -814,6 +811,7 @@ tokenColors:
     - punctuation.definition.type.end
     - punctuation.section.scope.begin
     - punctuation.section.scope.end
+    - punctuation.terminator.expression.php
     - storage.type.generic.java
     - string.template meta.brace
     - string.template punctuation.accessor
@@ -1022,7 +1020,6 @@ tokenColors:
   - name: Destructuring / aliasing reference name (LHS)
     scope:
     - meta.import variable.other.readwrite                          # Module import aliasing (real name)
-    - meta.object-binding-pattern-variable variable.object.property # Object destructuring property
     - meta.variable.assignment.destructured.object.coffee variable  # Object destructuring property (coffeescript)
     settings:
       fontStyle: italic
@@ -1121,3 +1118,17 @@ tokenColors:
       - meta.preprocessor.haskell
     settings:
       foreground: *COMMENT
+
+  - name: Log file error
+    scope:
+      - log.error
+    settings:
+      foreground: *RED
+      fontStyle: bold
+
+  - name: Log file warning
+    scope:
+      - log.warning
+    settings:
+      foreground: *YELLOW
+      fontStyle: bold

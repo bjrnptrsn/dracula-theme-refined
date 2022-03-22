@@ -1,6 +1,6 @@
 {
 	"name": "theme-dracula-refined",
-	"version": "2.22.3",
+	"version": "2.24.2",
 	"displayName": "Dracula Refined",
 	"homepage": "https://github.com/mathcale/dracula-theme-refined",
 	"description": "Yet another Dracula Official Theme fork, but better (in my opinion)",
@@ -60,9 +60,9 @@
 		]
 	},
 	"devDependencies": {
-		"js-yaml": "^3.14.0",
-		"prettier": "^2.2.1",
+		"js-yaml": "^4.1.0",
+		"prettier": "^2.6.0",
 		"tinycolor2": "^1.4.2",
-		"vsce": "^1.85.0"
+		"vsce": "^2.7.0"
 	}
 }

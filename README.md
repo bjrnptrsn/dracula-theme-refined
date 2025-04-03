@@ -28,6 +28,10 @@ All instructions can be found at [INSTALL](./INSTALL), but you could just open t
 
 If you'd like to contribute to this fork, please read the [contributing guidelines](./.github/CONTRIBUTING.md).
 
+## Dracula PRO
+
+[![Dracula PRO](./dracula-pro.png)](https://draculatheme.com/pro)
+
 ## License
 
 [MIT License](./LICENSE)

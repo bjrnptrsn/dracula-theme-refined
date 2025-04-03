@@ -1,68 +1,75 @@
 {
-	"name": "theme-dracula-refined",
-	"version": "2.24.3",
-	"displayName": "Dracula Refined",
-	"homepage": "https://github.com/mathcale/dracula-theme-refined",
-	"description": "An attempt to improve Dracula colors consistency on VS Code, making it more pleasant to the eyes during coding sessions",
-	"publisher": "mathcale",
-	"license": "MIT",
-	"scripts": {
-		"build": "node ./scripts/build.js",
-		"lint": "node ./scripts/lint.js",
-		"package": "vsce package -o ./bin/dracula.vsix",
-		"vscode:prepublish": "npm run build",
-		"vsce-publish": "vsce publish"
-	},
-	"maintainers": [
-		"Derek P Sifford <dereksifford@gmail.com>",
-		"Matheus Calegaro <matheuscalegaro@outlook.com>"
-	],
-	"contributors": [
-		"Krzysztof Wisznarewski",
-		"Daniel Ramos",
-		"Eric Jackson",
-		"Elliott Pogue",
-		"Ajit Singh",
-		"Teddy Bradford"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mathcale/dracula-theme-refined.git"
-	},
-	"bugs": {
-		"url": "https://github.com/mathcale/dracula-theme-refined/issues"
-	},
-	"engines": {
-		"vscode": "^1.13.0"
-	},
-	"categories": [
-		"Themes"
-	],
-	"keywords": [
-		"dracula",
-		"dracula-refined",
-		"dark",
-		"theme",
-		"color-theme"
-	],
-	"icon": "icon.png",
-	"galleryBanner": {
-		"color": "#3c4557",
-		"theme": "dark"
-	},
-	"contributes": {
-		"themes": [
-			{
-				"label": "Dracula Refined",
-				"uiTheme": "vs-dark",
-				"path": "./theme/dracula.json"
-			}
-		]
-	},
-	"devDependencies": {
-		"js-yaml": "^4.1.0",
-		"prettier": "^2.6.0",
-		"tinycolor2": "^1.4.2",
-		"vsce": "^2.7.0"
-	}
+    "name": "theme-dracula-refined",
+    "version": "2.25.1.1",
+    "displayName": "Dracula Refined",
+    "homepage": "https://github.com/mathcale/dracula-theme-refined",
+    "description": "An attempt to improve Dracula colors consistency on VS Code, making it more pleasant to the eyes during coding sessions",
+    "publisher": "mathcale",
+    "license": "MIT",
+    "scripts": {
+        "build": "node ./scripts/build.js",
+        "lint": "node ./scripts/lint.js",
+        "package": "vsce package -o ./bin/dracula.vsix",
+        "vscode:prepublish": "npm run build",
+        "vsce-publish": "vsce publish"
+    },
+    "maintainers": [
+        "Derek P Sifford <dereksifford@gmail.com>",
+        "Lucas de França (luxonauta)",
+        "Zeno Rocha",
+        "Matheus Calegaro <matheuscalegaro@outlook.com>"
+    ],
+    "contributors": [
+        "Krzysztof Wisznarewski",
+        "Daniel Ramos",
+        "Eric Jackson",
+        "Elliott Pogue",
+        "Ajit Singh",
+        "Teddy Bradford"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mathcale/dracula-theme-refined.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mathcale/dracula-theme-refined/issues"
+    },
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "dracula",
+        "dracula-refined",
+        "dark",
+        "theme",
+        "color-theme"
+    ],
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#3c4557",
+        "theme": "dark"
+    },
+    "contributes": {
+        "themes": [
+            {
+                "label": "Dracula Refined",
+                "uiTheme": "vs-dark",
+                "path": "./theme/dracula.json"
+            }
+        ]
+    },
+    "__metadata": {
+        "id": "4e44877c-1c8d-4f9c-ba86-1372d0fbeeb1",
+        "publisherDisplayName": "Dracula Theme",
+        "publisherId": "fbb3d024-f8f2-460c-bdb5-99552f6d8c4b"
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0",
+        "prettier": "^3.0.0",
+        "tinycolor2": "^1.6.0",
+        "@vscode/vsce": "^3.3.2"
+    }
 }

@@ -11,10 +11,12 @@
 
 If you are a git user, you can install the theme and keep up to date by cloning the repo:
 
-    $ git clone https://github.com/mathcale/dracula-theme-refined.git ~/.vscode/extensions/theme-dracula-refined
-    $ cd ~/.vscode/extensions/theme-dracula-refined
-    $ npm install
-    $ npm run build
+```bash
+git clone https://github.com/mathcale/dracula-theme-refined.git ~/.vscode/extensions/theme-dracula-refined
+cd ~/.vscode/extensions/theme-dracula-refined
+npm install
+npm run build
+```
 
 #### Activating theme
 

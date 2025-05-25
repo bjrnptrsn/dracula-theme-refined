@@ -16,6 +16,7 @@ const tinycolor = require('tinycolor2');
  * @prop {Record<'base'|'ansi'|'brightOther'|'other', string[]>} dracula - Dracula color variables.
  * @prop {Record<string, string|null|undefined>} colors - VSCode color mapping.
  * @prop {TokenColor[]} tokenColors - Textmate token colors.
+ * @prop {string} name - The name of the theme.
  */
 
 /**
@@ -51,6 +52,7 @@ const transformSoft = theme => {
         }
         return value;
     })
+    soft.name = 'Dracula Refined Soft';
     return soft;
 };
 
